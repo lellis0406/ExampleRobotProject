@@ -1,5 +1,7 @@
 package Field;
 
+import static java.lang.Math.abs;
+
 public class Pixel {
     private double x;
     private double y;
@@ -23,5 +25,9 @@ public class Pixel {
 
     public void setY(double setY) {
         y = setY;
+    }
+
+    public boolean checkProximity(double inX, double inY, double distance) {
+        return abs(x - inX) > distance || abs(y - inY) > distance;
     }
 }

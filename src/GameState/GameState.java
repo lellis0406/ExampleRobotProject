@@ -2,6 +2,9 @@ package GameState;
 
 import Field.Field;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class GameState {
     double time;
 
@@ -10,6 +13,12 @@ public class GameState {
     GameStateEnum state;
 
     int score;
+
+    private Map<String, Integer> robotMap = new HashMap<String, Integer>();
+
+    public GameState() {
+
+    }
 
     public GameStateEnum getState() {
         return state;
@@ -25,6 +34,14 @@ public class GameState {
 
     public int getScore() {
         return score;
+    }
+
+    public void addScore(int scoreSum) {
+        score += scoreSum;
+    }
+
+    public void tick() {
+        field.tick();
     }
 
 }
